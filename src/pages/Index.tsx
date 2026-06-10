@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const quickActions = [
@@ -86,6 +87,7 @@ function getGreeting() {
 }
 
 export default function Index() {
+  const navigate = useNavigate();
   const [now, setNow] = useState(new Date());
   const [vipOpen, setVipOpen] = useState(false);
 
@@ -153,6 +155,7 @@ export default function Index() {
           {/* Right */}
           <div className="flex items-center gap-4">
             <button
+              onClick={() => navigate("/egsu/dashboard")}
               className="px-4 py-2 rounded transition-all"
               style={{
                 background: "var(--ecsu-accent2)",
